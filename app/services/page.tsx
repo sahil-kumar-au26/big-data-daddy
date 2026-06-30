@@ -1,11 +1,11 @@
 "use client";
 import React from 'react';
+import Link from 'next/link';
 import { 
   Mic, Languages, Database, Cpu, Search, Edit3, 
   Video, Box, Layers, FileText, CheckSquare, 
   Repeat, Scan, Headphones, MessageSquare 
 } from 'lucide-react';
-import Link from 'next/link';
 
 const allServices = [
   { title: "Transcription", icon: <Mic />, desc: "General, Medical, and Legal Audio-to-Text.", slug: "transcription" },
@@ -24,18 +24,17 @@ const allServices = [
   { title: "QA & Validation", icon: <Search />, desc: "Rigorous testing of datasets and AI models.", slug: "qa" },
 ];
 
-export default function ServicesBeast() {
+export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#020202] pt-40 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-6xl md:text-9xl font-black uppercase italic tracking-tighter mb-20">
-          Our <span className="text-blue-600 font-outline text-transparent" style={{ WebkitTextStroke: '2px #2563eb' }}>Core</span> <br/> Arsenal.
+          Our <span className="text-blue-600">Services.</span>
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {allServices.map((s) => (
             <Link href={`/services/${s.slug}`} key={s.slug}>
               <div className="p-10 bg-[#080808] border border-white/5 rounded-[3rem] hover:border-blue-600 transition-all group relative overflow-hidden">
-                <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-blue-600/5 blur-3xl group-hover:bg-blue-600/10"></div>
                 <div className="text-blue-500 mb-8 w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition">{s.icon}</div>
                 <h3 className="text-3xl font-bold uppercase italic mb-4">{s.title}</h3>
                 <p className="text-gray-500 leading-relaxed font-medium">{s.desc}</p>
