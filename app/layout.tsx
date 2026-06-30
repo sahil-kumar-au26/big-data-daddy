@@ -1,18 +1,22 @@
 import './globals.css';
+import { Inter, Montserrat } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' });
+
 export const metadata = {
-  title: 'BigDataDaddy | AI Data Infrastructure',
-  description: 'High-fidelity data for the worlds leading AI models.',
+  title: 'BigDataDaddy | Enterprise AI Data Infrastructure',
+  description: 'Global leader in RLHF, Multilingual Transcription, and High-Fidelity AI Datasets.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-[#020202] text-white">
+      <body className={`${inter.variable} ${montserrat.variable} bg-[#020202] text-white antialiased`}>
         <Navbar />
-        <div className="min-h-screen">{children}</div>
+        {children}
         <Footer />
       </body>
     </html>
