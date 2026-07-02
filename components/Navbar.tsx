@@ -5,82 +5,67 @@ import { Menu } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-
-      <div className="absolute inset-0 backdrop-blur-xl bg-black/30 border-b border-white/10" />
-
-      <div className="relative max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full z-50 border-b border-white/10 backdrop-blur-2xl bg-black/40">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 h-20">
 
         <Link
           href="/"
-          className="text-2xl font-black tracking-wider"
+          className="text-3xl font-black tracking-tight"
         >
-          BIGDATADADDY
+          <span className="text-white">BIG</span>
+          <span className="text-blue-500">DATA</span>
+          <span className="text-white">DADDY</span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-10 text-white/70">
 
-          <Link
-            href="/solutions"
+          <a
+            href="#solutions"
             className="hover:text-blue-400 transition"
           >
             Solutions
-          </Link>
+          </a>
 
-          <Link
-            href="/industries"
+          <a
+            href="#industries"
             className="hover:text-blue-400 transition"
           >
             Industries
-          </Link>
+          </a>
 
-          <Link
-            href="/contributors"
+          <a
+            href="#services"
+            className="hover:text-blue-400 transition"
+          >
+            Services
+          </a>
+
+          <a
+            href="#contributors"
             className="hover:text-blue-400 transition"
           >
             Contributors
-          </Link>
+          </a>
 
-          <Link
-            href="/careers"
+          <a
+            href="#careers"
             className="hover:text-blue-400 transition"
           >
             Careers
-          </Link>
-
-          <Link
-            href="/contact"
-            className="hover:text-blue-400 transition"
-          >
-            Contact
-          </Link>
+          </a>
 
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex gap-4">
 
           <button
-            className="
-            px-5
-            py-2
-            rounded-xl
-            border
-            border-white/10
-            bg-white/5
-            hover:bg-white/10
-            "
+            className="px-6 py-3 rounded-full border border-white/10 hover:border-blue-500 transition"
           >
             Login
           </button>
 
           <button
-            className="
-            px-5
-            py-2
-            rounded-xl
-            bg-blue-600
-            hover:bg-blue-700
-            "
+            className="px-7 py-3 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:scale-105 transition duration-300 shadow-[0_0_30px_rgba(37,99,235,.5)]"
           >
             Start Project
           </button>
@@ -88,11 +73,10 @@ export default function Navbar() {
         </div>
 
         <button className="lg:hidden">
-          <Menu size={28} />
+          <Menu size={30} />
         </button>
 
       </div>
-
     </header>
   );
 }
